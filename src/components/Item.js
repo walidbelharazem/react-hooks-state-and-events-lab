@@ -1,25 +1,10 @@
 import React from "react";
 import { useState } from "react";
-/*export default function Item({ name, category }) {
-  const [isInCart, setIsInCart] = useState(false);
-  const toggleCartStatus = () => { setIsInCart(!isInCart); };
-
-  return (
-    <li className="">
-      <span>{name}</span>
-      <span className="category">{category}</span>
-      <button className="add">Add to Cart</button>
-    </li>
-  );
-
-}*/
 
 export default function Item({ name, category }) {
   const [isInCart, setIsInCart] = useState(false);
 
-  const toggleCartStatus = () => {
-    setIsInCart(!isInCart);
-  };
+  const toggleCartStatus = () => {setIsInCart(!isInCart); };
 
   return (
     <li className={isInCart ? "in-cart" : ""}>
