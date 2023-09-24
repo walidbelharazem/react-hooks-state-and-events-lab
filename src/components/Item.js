@@ -1,6 +1,9 @@
 import React from "react";
+import { useState } from "react";
+/*export default function Item({ name, category }) {
+  const [isInCart, setIsInCart] = useState(false);
+  const toggleCartStatus = () => { setIsInCart(!isInCart); };
 
-function Item({ name, category }) {
   return (
     <li className="">
       <span>{name}</span>
@@ -8,6 +11,23 @@ function Item({ name, category }) {
       <button className="add">Add to Cart</button>
     </li>
   );
-}
 
-export default Item;
+}*/
+
+export default function Item({ name, category }) {
+  const [isInCart, setIsInCart] = useState(false);
+
+  const toggleCartStatus = () => {
+    setIsInCart(!isInCart);
+  };
+
+  return (
+    <li className={isInCart ? "in-cart" : ""}>
+      <span>{name}</span>
+      <span className="category">{category}</span>
+      <button className="add" onClick={toggleCartStatus}>
+        {isInCart ? "Remove From Cart" : "Add to Cart"}
+      </button>
+    </li>
+  );
+}
